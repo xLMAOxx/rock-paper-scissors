@@ -1,5 +1,6 @@
 body{
     background-color: #C4E0F9;
+    padding-left: 5em;
 }
 h1{
     color: #67AAF9;
@@ -16,7 +17,6 @@ p{
     display:flex;
     flex-direction: column;
     margin: 2% 60% 0 0;
-
 }
 #choices{
     display: flex;
@@ -42,7 +42,30 @@ button{
 }
 #interface{
     display: flex;
+    flex-direction: column;
     border: 10px double #c25a8b;
-    padding: 10%;
-    margin: 0 30% 5% 10% ;
+    height: 20em;
+    margin: 0 40% 5% 10%;
+}
+#bothChoices{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #c25a8b;
+    font-size: 200%;
+    margin: 1em 2em 0 2em;
+    height: 50%;
+}
+#result{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #c25a8b;
+    font-size: 3em;
+    text-align: center;
+    margin: 0 0.5em 0 0.5em;
+    height: 35%;
+}
+#score{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #c25a8b;
+    font-size: 2em;
+    margin: 0.5em;
+    height: 10%;
 }

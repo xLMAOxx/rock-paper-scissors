@@ -1,11 +1,18 @@
 let win = 0;
 let lost = 0;
 let tie = 0;
-const botChoices = ["ROCK", "PAPER", "SCISSORS"];
+const botChoices = ["rock", "paper", "scissors"];
+const bothChoicesDiv = document.getElementById("bothChoices");
+const resultDiv = document.getElementById("result");
+const scoreDiv = document.getElementById("score");
+const gameResultDiv = document.getElementById("gameResult");
+const InterfaceDiv = document.getElementById("interface");
 
 
 document.getElementById("choices").addEventListener("click", function(event){
    let elementId = event.target.id;
+   const target = event.target;
+   if (target.tagName !== "BUTTON") return;
     function getBotChoices(x){
         return (Math.floor(Math.random() * x.length));
     };
@@ -14,65 +21,41 @@ document.getElementById("choices").addEventListener("click", function(event){
     botEndResult = "BOT CHOSE " + botIndex;
 
     function gamestart(){
-        if(botResult == 0 && elementId==="rock"){
-            console.log(botEndResult + " AND YOU CHOSE ROCK!");
-            console.log("TIE!");
+        if(botIndex === elementId){
+            bothChoicesDiv.innerText= `Bot chose ${botIndex} and you chose ${elementId}`;
+            resultDiv.innerText = "TIE!";
             return tie +=1;
-    
-        } else if (botResult == 0 && elementId==="paper"){
-            console.log(botEndResult + " AND YOU CHOSE PAPER!");
-            console.log("YOU WIN!");
-            return win += 1;
-    
-        } else if(botResult == 0 && "scissors"===elementId){
-            console.log(botEndResult + " AND YOU CHOSE SCISSORS!");
-            console.log("YOU LOST!");
+        } else if(elementId === "rock" && botIndex === "paper" || elementId === "paper" && botIndex=== "rock"|| elementId === "scissors" && botIndex === "paper"){
+            bothChoicesDiv.innerText= `BOT CHOSE ${botIndex.toUpperCase()} AND YOU CHOSE ${elementId.toUpperCase()}`;
+            resultDiv.innerText = "YOU WIN!";
+            return win +=1;
+        } else{
+            bothChoicesDiv.innerText= `Bot chose ${botIndex} and you chose ${elementId}`;
+            resultDiv.innerText = "YOU LOSE!";
             return lost +=1;
+        }
 
-        } else if(botResult == 1 && "rock"===elementId){
-            console.log(botEndResult + " and you chose rock!");
-            console.log("YOU LOST");
-            return lost +=1;
-    
-        }else if (botResult == 1 && "paper"===elementId){
-            console.log(botEndResult + " and you chose paper!");
-            console.log("TIE!");
-            return tie +=1;
-    
-        } else if (botResult == 1 && "scissors"===elementId){
-            console.log(botEndResult + " AND YOU CHOSE SCISSORS!");
-            console.log("YOU WIN!");
-            return win +=1;
-    
-        }else if (botResult == 2 && "rock"===elementId){
-            console.log(botEndResult + " AND YOU CHOSE ROCK!");
-            console.log("YOU WIN!");
-            return win +=1;
-    
-        }else if(botResult == 2 && "paper"===elementId){
-            console.log("bot chose " + botIndex + " and you chose paper");
-            console.log("YOU LOST!");
-            return lost +=1;
-    
-        }else if(botResult == 2 && "scissors"===elementId){
-            console.log("bot choice " + botIndex + " and you chose scissors");
-            console.log("TIE!");
-            return tie +=1;
-        }}
-        gamestart();
+    }
+    gamestart();
+    scoreDiv.innerText = `WINS: ${win} | LOST: ${lost} | TIES: ${tie}`;
 });
 
-document.getElementById("end").addEventListener("click", function(){
-
     function winner(){
-        if(win>= lost){
+        /*InterfaceDiv.textContent = ""; // Clears everything
+        InterfaceDiv.appendChild(document.createElement("div")); // Adds new content*/
+
+        if(win> lost){
             console.log("YOU HAVE WON THE GAME!");
-        } else {
-            console.log("you have lost the game");
+            //gameResultDiv.innerText = "YOU HAVE WON THE GAME!";
+            
+        } else if(lost > win){
+            console.log("YOU HAVE LOST THE GAME!");
+            //gameResultDiv.innerText = "YOU HAVE LOST THE GAME!";
+        }else{
+            console.log("ITS A TIE!");
+           // gameResultDiv.innerText = "ITS A TIE!";
         }
-    }
-    winner(),
-    console.log("WINS: " + win);
-    console.log("LOSTS: " + lost);
-    console.log ("TIES: " + tie)
+    };
+document.getElementById("end").addEventListener("click", function(){
+winner();
 });
