@@ -41,19 +41,25 @@ document.getElementById("choices").addEventListener("click", function(event){
 });
 
     function winner(){
-        /*InterfaceDiv.textContent = ""; // Clears everything
-        InterfaceDiv.appendChild(document.createElement("div")); // Adds new content*/
+        InterfaceDiv.textContent = ""; 
+        const newDiv = document.createElement("div"); 
+        newDiv.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif"; 
+        newDiv.style.fontSize = "50px"; 
+        newDiv.style.color = "#B95F89";
+        newDiv.style.textAlign = "center"
+        newDiv.padding = "2em";
+        InterfaceDiv.appendChild(newDiv); 
 
         if(win> lost){
             console.log("YOU HAVE WON THE GAME!");
-            //gameResultDiv.innerText = "YOU HAVE WON THE GAME!";
+            newDiv.textContent = "YOU HAVE WON THE GAME!";
             
         } else if(lost > win){
             console.log("YOU HAVE LOST THE GAME!");
-            //gameResultDiv.innerText = "YOU HAVE LOST THE GAME!";
+            newDiv.textContent = "YOU HAVE LOST THE GAME!";
         }else{
             console.log("ITS A TIE!");
-           // gameResultDiv.innerText = "ITS A TIE!";
+           newDiv.textContent = "ITS A TIE!";
         }
     };
 document.getElementById("end").addEventListener("click", function(){
