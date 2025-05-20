@@ -1,36 +1,39 @@
 body{
     background-color: #C4E0F9;
     padding-left: 5em;
+   /*color: var(--text-color);*/
 }
+
+
 h1{
     color: #67AAF9;
     text-align: center;
-    font-size: 50px;
+    font-size: 5em;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 p{
     color: #B95F89;
-    font-size: 50px;
+    font-size: 3em;
     font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 #main{
     display:flex;
     flex-direction: column;
-    margin: 2% 60% 0 0;
+    margin: 1% 60% 0 0;
 }
 #choices{
     display: flex;
     justify-content: space-around;
-    margin: 20px 0 20px 0;
+    margin: 2% 0 2% 19%;
     padding: 30px;
     
 }
 button:hover{
-    background-color: #e6b9ce;
+    background-color: #e9cdd8;
     background-clip: padding-box;
 }
 button:active{
-    background-color: #ca6f9a;
+    background-color: #7c3e5b;
 }
 button{
     font-size: larger;
@@ -45,7 +48,7 @@ button{
     flex-direction: column;
     border: 10px double #c25a8b;
     height: 20em;
-    margin: 0 40% 5% 10%;
+    margin: 0 40% 2% 10%;
 }
 #bothChoices{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -68,4 +71,11 @@ button{
     font-size: 2em;
     margin: 0.5em;
     height: 10%;
+}
+#end{
+    font-size:2em;
+    margin-left: 29%;
+}
+#text{
+    margin: 0%;
 }
