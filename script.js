@@ -18,7 +18,7 @@ function winner(){
     const newDiv = document.createElement("div"); 
     newDiv.style.fontFamily = "Verdana, Geneva, Tahoma, sans-serif"; 
     newDiv.style.fontSize = "50px"; 
-    newDiv.style.color = "#B95F89";
+  //   newDiv.style.color = "#B95F89";
     newDiv.style.textAlign = "center";
     newDiv.style.paddingTop = "2.5em";
 
@@ -33,7 +33,7 @@ function winner(){
       console.log("YOU HAVE LOST THE GAME!");
       newDiv.textContent = "YOU HAVE LOST THE GAME!";
       document.body.style.backgroundColor = "#c25d5a";
-     // document.body.style.color = "blue"; // Changes all text color to blue
+      document.body.style.color = "blue"; // Changes all text color to blue
 
       // document.documentElement.style.setProperty("--text-color", "black");
     }else{
